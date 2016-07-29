@@ -28,3 +28,20 @@ echo PrintThis::widget([
 ]);
 ?>
 ```
+in view file for print area
+```html
+<div id="PrintThis">
+Your Html code here
+</div>
+```
+
+you can add css for disable link display
+```css
+@media print {
+    .noprint {display:none !important;}
+    a:link:after, a:visited:after {  
+      display: none;
+      content: "";    
+    }
+}
+```
