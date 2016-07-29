@@ -25,6 +25,8 @@ class PrintThis extends Widget
             $this->id = $this->htmlOptions['id'] = $this->getId();
         }
 
+        echo Html::button('<i class="fa fa-print"></i> พิมพ์หน้านี้', ['class' => 'btn btn-info', 'id' => 'btnPrintThis']);
+
     }
 
     protected function registerAsset()
@@ -34,7 +36,10 @@ class PrintThis extends Widget
         $this->options = ArrayHelpers::merge(['bindto' => '#'.$this->id], $this->options);
 
         $jsOptions = Json::encode($this->options);
-        $js = "$(\"".$this->id."\").printThis({".$jsOptions."});";
+        $js = "$(\"#btnPrintThis\").click(function(){
+              $(\"".$this->id."\").printThis({".$jsOptions."});
+          });
+          ";
 
         $key = __CLASS__ . '#' . $this->id;
 
