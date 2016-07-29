@@ -2,7 +2,9 @@ PrintThis for Yii Framework 2
 ---
 
 Usage
----
+-----
+To use this widget, insert the following code into a view file:
+```php
 <?php
 echo PrintThis::widget([
 	'htmlOptions' => [
@@ -25,3 +27,4 @@ echo PrintThis::widget([
 	]
 ]);
 ?>
+```
