@@ -3,7 +3,6 @@ namespace yii2assets\printthis;
 
 use yii\base\Widget;
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\View;
 
@@ -25,7 +24,10 @@ class PrintThis extends Widget
             $this->id = $this->htmlOptions['id'] = $this->getId();
         }
 
-        echo Html::button('<i class="fa fa-print"></i> พิมพ์หน้านี้', ['class' => 'btn btn-info', 'id' => 'btnPrintThis']);
+        echo Html::button('<i class="'.$this->htmlOptions['btnIcon'].'"></i> '.$this->htmlOptions['btnText'].'', ['class' => ''.$this->htmlOptions['btnClass'].'', 'id' => ''.$this->htmlOptions['btnId'].'']);
+
+        $this->registerAsset();
+        parent::run();
 
     }
 
@@ -33,11 +35,10 @@ class PrintThis extends Widget
     {
         PrintThisAsset::register($this->view);
 
-        $this->options = ArrayHelpers::merge(['bindto' => '#'.$this->id], $this->options);
 
         $jsOptions = Json::encode($this->options);
-        $js = "$(\"#btnPrintThis\").click(function(){
-              $(\"".$this->id."\").printThis({".$jsOptions."});
+        $js = "$(\"#".$this->htmlOptions['btnId']."\").click(function(){
+              $(\"#".$this->id."\").printThis(".$jsOptions.");
           });
           ";
 
