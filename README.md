@@ -3,6 +3,7 @@ PrintThis for Yii Framework 2
 Install
 -----
 composer require yii2assets/yii2-printthis
+
 Usage
 -----
 To use this widget, insert the following code into a view file:
