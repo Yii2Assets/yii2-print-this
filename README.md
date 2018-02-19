@@ -2,7 +2,9 @@ PrintThis for Yii Framework 2
 ---
 Install
 -----
-composer require yii2assets/yii2-printthis
+composer require yii2assets/yii2-printthis "^1.0"
+or add this line to composer.json
+"yii2assets/yii2-printthis": "^1.0"
 
 Usage
 -----
