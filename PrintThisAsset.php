@@ -5,7 +5,7 @@ use yii\web\AssetBundle;
 
 class PrintThisAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/printThis';
+    public $sourcePath = '@bower/printthis';
 
     public $js = [
         '//code.jquery.com/jquery-migrate-1.3.0.min.js',
