@@ -11,6 +11,8 @@ Usage
 To use this widget, insert the following code into a view file:
 ```php
 <?php
+use yii2assets\printthis\PrintThis;
+
 echo PrintThis::widget([
 	'htmlOptions' => [
 		'id' => 'PrintThis',
